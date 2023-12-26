@@ -1,8 +1,12 @@
 import { API_KEYS } from './keys.js';
+
+// Randomize API keys sorting order to evenly distribute the usage of all keys
+const API_KEYS_RANDSORT = [...API_KEYS].sort(() => 0.5 - Math.random());
+
 // Fetch client's IP using httpbin
 $.get("https://httpbin.org/ip", function(data) {
     (async function() {
-        for (let key of API_KEYS) {
+        for (let key of API_KEYS_RANDSORT) {
             if (await updateLocation(data.origin, key)) {
                 break; // Exit loop if location update is successful
             }
@@ -12,15 +16,14 @@ $.get("https://httpbin.org/ip", function(data) {
 
 function updateLocationDetails(response) {
     // Update country and city
-    $("#country_name").html(response.country_name);
-    $("#city").html(response.city);
+    $(".country").html(response.country_name);
+    $(".city").html(response.city);
 
     // Determine the location display string
     const locationDisplay = response.city ? `${response.city}, ${response.country_name}` : response.country_name;
 
     // Update location information in HTML
     $(".location").html(locationDisplay);
-    $("#location").html(locationDisplay);
 
     // Create coordinates string
     const coords = `${response.latitude},${response.longitude}`;
