@@ -3,24 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--CONTADOR-->
-<img src="https://whos.amung.us/pingjs/?k=wetboxtv &t=Jazmin &x=https://Jazmin.bio/" style="display: none;"/>
-<!--CONTADOR-->
     <link href="./css/lightbox.min.css" rel="stylesheet" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBHG4BKRGY"></script>
-    <!-- ANALYTICS -->
-<!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBHG4BKRGY"></script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CBHG4BKRGY');
-    </script>
-    <!-- ANALYTICS -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -62,6 +45,37 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <title>DESIRE's Secret Page</title>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['setRequestMethod', 'POST']);
+      _paq.push(['disableAlwaysUseSendBeacon']);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      _paq.push(['enableHeartBeatTimer']);
+      (function() {
+        var u="//ma.opus.onl/";
+        _paq.push(['setTrackerUrl', u+'ma-php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'ma-js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//ma.opus.onl/ma-php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+    <!-- Custom Matomo Tracking -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('btn-of');
+          if (button)
+            button.addEventListener('click', (e) => {
+              if (e.target && e.target.href)
+                _paq.push(['trackEvent', 'Landing Page', 'Click', 'OF Link Click', e.target.href]);
+            });
+      });
+    </script>
+    <!-- End Custom Matomo Tracking -->
     <body>
     <nav>
       <div class="nav-wrapper" style="background-color: #fafafa">
